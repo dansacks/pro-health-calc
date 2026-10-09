@@ -1,0 +1,252 @@
+/* src/App.css */
+html {
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.App {
+  display: contents; /* Ensures the div itself doesn't interfere with grid layout */
+  text-align: center;
+}
+
+.App-header {
+  background-color: #9B0000;
+  padding: 10px;
+  color: #FFFFFF;
+  /*position: sticky;*/
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header is above other content */
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+.main-content {
+  justify-content: space-between;
+  font-size: 1.25em;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+  overflow-y: auto; /* Ensures content is scrollable if it overflows */
+  padding: 30px;
+}
+
+.form-panel, .output-panel {
+  width: 100%;
+}
+
+.panel {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: #9B0000;
+  color: #FFFFFF;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate; /* Separate borders to allow rounded corners */
+  border-spacing: 0;
+  border-radius: 3px; /* Rounded corners for the table */
+  overflow: visible; /* Ensures content respects border-radius */
+  background-color: #333333;
+}
+
+table tbody tr th:first-of-type{
+  width: 40%;
+}
+
+
+table, th, td {
+  border: 1px solid #FFFFFF;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+table tr td.ok, table tr th.ok,
+table tr.ok td, table tr.ok th {
+  background-color: darkseagreen;
+}
+
+
+h3 {
+  text-align: left;
+  margin-top: 0;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #9B0000;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: auto;
+  padding: 5px 0;
+}
+.expandable-section {
+
+}
+
+.section-content {
+  background-color: #333333;
+  border-color: #FFFFFF;
+  border: solid;
+  border-radius: 3px;
+}
+
+.expand-collapse-icon {
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
+}
+
+.expand-collapse-icon.collapsed:hover {
+  color: #0056b3;
+}
+
+.expand-collapse-icon.expanded:hover {
+  color: #0056b3;
+}
+
+.tab-layout {
+  background-color: #F7F7F7;
+  padding: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs button {
+  padding: 30px 60px;
+  cursor: pointer;
+  border: 2px solid #333333;
+  background-color: #9B0000;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px 20px 20px 20px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(5, 5, 5, 5.75);
+}
+
+.tabs button:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.75);
+}
+
+.tabs button.active {
+  background-color: #0479A8;
+  color: #FFFFFF;
+  border-color: #333333;
+}
+
+.tab-content-with-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-content {
+  padding: 50px;
+  border: 5px solid #ccc;
+  background-color: #fafafa;
+  flex-grow: 1;
+  margin-bottom: 50px;
+}
+
+.arrow-left, .arrow-right {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 75px;
+  font-weight: bold;
+  color: #007bff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  transform: scale(1.5);
+  color: #0056b3;
+}
+
+.arrow-left:disabled, .arrow-right:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tooltip Css */
+
+.tooltip-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Style the tooltip icon */
+.tooltip-icon {
+  font-size: 20px;
+  color: #007bff;
+  display: inline-block;
+}
+
+/* Tooltip text - initially hidden */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #36454F;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #0e1111;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  z-index: 1;
+  white-space: normal;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  min-width: 45em;
+  font-size: 15px;
+
+}
+
+/* Show tooltip on hover (desktop) */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Show tooltip on click (mobile) */
+.tooltip-text.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
