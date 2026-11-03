@@ -21,7 +21,7 @@ npm --version
 Get the code and move into the project folder:
 
 ```bash
-git clone https://git.doit.wisc.edu/smph-public/department-of-family-medicine-and-community-health/pro-health-calc.git
+git clone https://github.com/dansacks/pro-health-calc.git
 cd pro-health-calc
 ```
 
